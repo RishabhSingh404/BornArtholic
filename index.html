@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>BornArtholic</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <body>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    } 
+    nav{
+  
+      height: 71px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px 0 100px;
+    flex-wrap: wrap;
+    z-index: 999;
+    backdrop-filter: blur( 5px );
+    background: radial-gradient(at 50% 0%,rgba(0,0,0,0),rgba(255,255,255,0.3));
+    display: flex;
+    position: fixed;
+ 
+    }
+    nav img{
+      width: 74px;
+  height: auto;
+    }
+    nav ul{
+      display: flex;
+      flex-wrap: wrap;
+      list-style: none;
+    }
+    nav ul li{
+      margin: 0 5px;
+    }
+    nav ul li a{
+      color: #f2f2f2;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 5px;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a.active,
+    nav ul li a:hover{
+      color: #111;
+      background: #fff;
+    }
+    nav .menu-btn i{
+      color: #fff;
+      font-size: 22px;
+      cursor: pointer;
+      display: none;
+    }
+    input[type="checkbox"]{
+      display: none;
+    }
+    @media (max-width: 1000px){
+      nav{
+        padding: 0 40px 0 50px;
+      }
+    }
+    @media (max-width: 920px) {
+      nav .menu-btn i{
+        display: block;
+      }
+      #click:checked ~ .menu-btn i:before{
+        content: "\f0c9";
+      }
+      nav ul{
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        z-index: 999;
+        backdrop-filter: blur( 5px );
+        background: radial-gradient(at 50% 0%,rgba(0,0,0,0),rgb(10 10 10));
+        height: 100vh;
+        width: 100%;
+        text-align: center;
+        display: block;
+        transition: all 0.2s ease;
+      }
+      #click:checked ~ ul{
+        left: 0;
+      }
+      nav ul li{
+        width: 100%;
+        margin: 40px 0;
+      }
+      nav ul li a{
+        width: 100%;
+        margin-left: -100%;
+        display: block;
+        font-size: 20px;
+        transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      }
+      #click:checked ~ ul li a{
+        margin-left: 0px;
+      }
+      nav ul li a.active,
+      nav ul li a:hover{
+        background: none;
+        color: cyan;
+      }
+    }
+    .loding a {
+      position: absolute;
+      top: 93%;
+      left: 51%;
+      transform: translate(-50%,-50%);
+      height: 36px;
+      width: 147px;
+      border: 3px solid rgba(255, 255, 255, 0.4);
+      border-radius: 2px;
+      backdrop-filter: blur( 0px );
+      background: radial-gradient(at 50% 0%,rgba(0,0,0,0),rgba(255,255,255,0.3));
+      box-shadow: 10px 10px 30px rgb(0 0 0 / 50%);
+      transition: all 0.38s ease-in-out;
+      text-decoration: none;
+      font-size: smaller;
+  }
+    .content{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: -1;
+      width: 100%;
+      padding: 0 30px;
+      color: #1b1b1b;
+    }
+    .content div{
+      font-size: 40px;
+      font-weight: 700;
+    }
+    
+  </style>
+   <nav>
+     <a href="#"><img src="ArthLogo.png" alt="" ></a>
+<input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+<li><a class="active" href="#">Home</a></li>
+<li><a href="#about">AboutUs</a></li>
+<li><a href="#gallery">Gallery</a></li>
+<li><a href="#shop">Contact</a></li>
+<li><a href="#contact">FollowUS</a></li>
+</ul>
+</nav>
+
+
+
+     <!--<header>
+        <a href="#"><img src="ArthLogo.png" alt="" ></a>
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">AboutUs</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#shop">Enquiry</a></li>
+        <li><a href="#contact">Contact</a></li>
+        
+      </ul>-->
+
+      
+        <!--   <input id="main-menu-checkbox" type="checkbox">
+          <label for="main-menu-checkbox" class="menu-toggle">
+         
+          <span class="fa fa-bars" aria-hidden="true"></span>
+        </label>
+       
+         <a href="#"><img src="ArthLogo.png" alt="" ></a>
+        
+        <nav id="main-menu" role="navigation" class="main-menu" aria-expanded="false" aria-label="Main menu">
+          <label for="main-menu-checkbox"class="menu-close">
+            <span class="sr-only">Close main menu</span>
+            <span class="fa fa-close" aria-hidden="true"></span>
+          </label>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+        <label for="main-menu-checkbox"
+           class="backdrop"
+           tabindex="-1"
+           aria-hidden="true" hidden></label>-->
+   
+
+      <!--NEw nav bar-->
+      <!--<a href="#"><img src="ArthLogo.png" alt="" ></a>
+      <ul id="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#shop">Shop</a></li>
+        <li><a href="#contact">Contact</a></li>
+        
+      </ul>-->
+     
+      <section id="home">
+   <!-- <h1>Born Artholic</h1> -->
+   <div class="glass">
+      <div class="Jumbo">
+      <img src="Mainname.png" src="">
+    </div>
+   
+      
+      <div class="Flower">
+      <img src="floral.png" src="">
+    </div>
+   
+    </div>
+    
+    </section>
+  
+    
+    
+  <section id="about">
+     <!--<h1>AboutUs</h1>--> 
+      <div class="imgBox">
+        <img src="AAaa1.png" alt="girls">
+      </div>
+    <div class="abtbox">
+      
+      <div class="contentwr">
+        <h2>About Us</h2>
+        <p>Born Artholic is an Art and Craft pay with DIY touch in here. See some interesting art work with us in each post and story with more the 20+ types of arts created work, with colours, Black & White, Gold & Silver. 
+        Art works like mandala art, Sketch, painting, party decor, tiles art, pencil sketch/portrait, gemotrical art, coffe painting, Nip painting, bottle art, 3D art, wall art, oil pestel art, Gift box, paper flower, Diy, brush on things,
+        Fabric arts, cake art, case/mobile cover art, handmade things, rangoli, food art, and many more.</p>
+        <p>We artist think wide to explore new arts, and create what ever comes in mind as innovative. </p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <!--<h1>Ours Gallery</h1>
+      <div class="vid">
+        <video src="Butterfly.mp4" controls="controls" loop="loop" autoplay="autoplay" width="300px"></video>
+      </div> -->
+      <div class="glasses">
+        <div class="gallery1">
+    <a target="_blank" href="img/g1.jpeg">
+    <img src="img/g1.jpeg" alt="Cinque Terre" width="600" height="400">
+    </a>
+    
+    </div>
+
+    <div class="gallery1">
+    <a target="_blank" href="img/g2.jpeg">
+    <img src="img/g2.jpeg" alt="Cinque Terre" width="600" height="400">
+    </a>
+    
+    </div>
+
+    <div class="gallery1">
+    <a target="_blank" href="img/g3.jpeg">
+    <img src="img/g3.jpeg" alt="Cinque Terre" width="600" height="400">
+    </a>
+    
+    </div>
+
+    <div class="gallery1">
+    <a target="_blank" href="img/g4.jpeg">
+    <img src="img/g4.jpeg" alt="Cinque Terre" width="600" height="400">
+    </a>
+    
+    </div>
+
+    <div class="gallery1">
+    <a target="_blank" href="img/g5.jpeg">
+    <img src="img/g5.jpeg" alt="Cinque Terre" width="600" height="400">
+    </a>
+    
+    </div>
+
+    <div class="gallery1">
+    <a target="_blank" href="img/g6.jpeg">
+    <img src="img/g6.jpeg" alt="Cinque Terre" width="600" height="400">
+    </a>
+</div>
+<div class="loding a">
+
+  <h2><a href="gallery.html" >Load More </a></h2>
+
+</div>
+    <div class="contentre ">
+      <div class="Butterflyimg">
+        <video src="img/But2.mp4" controls="controls" loop="loop" autoplay muted="autoplay" ></video>       
+    
+      <div class="smartphone">
+        <img src="Daco_4075075.png" alt="img">
+      </div>
+      </div>
+      </div>
+
+            
+
+
+  </section>
+
+  <section id="shop" >
+    <!--
+      <div class="form">
+        <div class="form_container">
+          <div class="heading">
+            <h2>For Enquirey</h2>
+          </div>
+         <form>
+           <div class="input_box">
+              <span class="icon"><i class="fa fa-user" ></i></span>
+              <input type="text" name="" placeholder="Name" required="required">
+           </div>
+
+            <div class="input_box">
+              <span class="icon"><i class="fa fa-envelope" ></i></span>
+              <input type="email" name="" placeholder="Email" required="required">
+           </div>
+
+           <div class="input_box">
+              <span class="icon"><i class="fa fa-phone" ></i></span>
+              <input type="tel" name="" placeholder="Phone no." required="required">
+           </div>
+
+           <div class="input_box">
+              <span class="icon"><i class="fa fa-edit" ></i></span>
+              <textarea rows="7" placeholder="Message"></textarea>
+           </div>
+
+          <div class="submit">
+         <button type="submit"> send</button>
+          </div>
+
+
+         </form>
+        </div>
+      </div> -->
+      <style>
+
+
+        /* Style inputs */
+        input[type=text], select, textarea {
+          width: 79%;
+          padding: 9px;
+          border: 1px solid #ccc;
+          margin-top: 14px;
+          margin-bottom: 16px;
+          resize: vertical;
+        }
+        input[type=email], select, textarea {
+          width: 79%;
+          padding: 10px;
+          border: 1px solid #ccc;
+       
+          margin-bottom: 0px;
+          resize: vertical;
+        }
+        input[type=tel], select, textarea {
+          width: 79%;
+          padding: 10px;
+          border: 1px solid #ccc;
+          margin-bottom: 0px;
+          resize: vertical;
+          margin-top: 20px;
+        }
+        
+        input[type=submit] {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          cursor: pointer;
+        }
+        
+        input[type=submit]:hover {
+          background-color: #45a049;
+        }
+        
+        /* Style the container/contact section */
+        .container {
+          border-radius: 5px;
+          background-color: #f2f2f23b;
+          padding: 10px;
+        }
+        
+        /* Create two columns that float next to eachother */
+        .column {
+          float: left;
+          width: 50%;
+          margin-top: 6px;
+          padding: 20px;
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        
+        /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 600px) {
+          .column, input[type=submit] {
+            width: 24%;
+            margin-top: 0px;
+        }
+        input[type=submit] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 11px 5px;
+            border: none;
+            cursor: pointer;
+        }
+          input[type=text], select, textarea {
+            width: 79%;
+            padding: 9px;
+            border: 1px solid #ccc;
+            margin-top: 14px;
+            margin-bottom: 16px;
+            resize: vertical;
+          }
+          input[type=email], select, textarea {
+            width: 79%;
+            padding: 10px;
+            border: 1px solid #ccc;
+         
+            margin-bottom: 0px;
+            resize: vertical;
+          }
+          input[type=tel], select, textarea {
+            width: 79%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin-bottom: 0px;
+            margin-top: 14px;
+          }
+        }
+       
+        </style>
+        
+      <div class="box">
+        <div class="dis">
+        <img src="Daco_4084215 (1).png"alt="image">
+        <div class="container">
+          
+          <div style="color:white;font-size:medium">
+            <h2>Contact us of any special requirements</h2>
+            <form >
+              
+              <div class="input_box ">
+                <input type="text" placeholder="Username" required="required">
+              </div>
+
+               <div class="input_box">
+                <input type="email" placeholder="Email" required="required">
+              </div>
+
+               <div class="input_box">
+                <input type="tel" placeholder="Mobile no." required="required">
+              </div>
+
+              <div class="input_box">
+                <textarea rows="7" placeholder="Enquiry Details"></textarea>
+              </div>
+
+              <div class="input_box">
+                <input type="submit" value="Send" >
+              </div>
+
+            </form>
+          </div>
+        </div>
+        </div>
+      </div>
+      
+      
+  </section>
+
+<!--      Contact Social               --->
+
+  <section id="contact">
+    <!--<h1>Contact US</h1>width="950" height="950"-->
+   
+    <div class="mand">
+     
+       <img src="mandala1.png"alt="">
+       
+      <div class="cir">
+        
+        
+            <h3> Born Artholic</h3>
+            
+            <div class="ico">
+              <ul>
+                <li> <a href="https://www.facebook.com/Born.Artholic2468"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+               <li> <a href="https://www.instagram.com/born_artholic2468/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+               <li> <a href="mailto:born.artholic2468@gmail.com"><i class="fa fa-google" aria-hidden="true"style="color:red"></i></a></li>
+               <!--watsap icon remove comment to icon <li><a href="https://api.whatsapp.com/send?phone=919930902964" >
+                <i class="fa fa-whatsapp my-float" aria-hidden="true"style="color:#25d366"></i></a>
+                </li> -->
+              </ul>  
+        </div>
+       
+     <!--- </div>
+      <div class="contain">
+        <div class="toptxt">
+          <a href="#"><img src="arrow.png" alt="" ></a></div>
+        </div></div>
+    </div>-->
+   
+  </section>
+ 
+ <style>
+  .float{
+    position:fixed;
+    width:60px;
+    height:60px;
+    bottom:40px;
+    right:40px;
+  
+    color:#25d366;
+  
+    text-align:center;
+    font-size:30px;
+  
+   
+  }
+  
+  .my-float{
+    margin-top:16px;
+  }
+  </style>
+  
+    <script src="script.js"></script>
+   
+   
+<!--------------------------------back to menue button with css html------------------------------------->
+  <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+      }
+      
+      #myBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 30px;
+        z-index: 99;
+        font-size: 18px;
+        border: none;
+        outline: none;
+        background-color: rgb(77, 58, 145);
+        color: white;
+        cursor: pointer;
+        padding: 15px;
+        border-radius: 4px;
+      }
+      
+      #myBtn:hover {
+        background-color: rgb(26, 176, 187);
+      }
+      </style>
+     
+      
+      <button onclick="topFunction()" id="myBtn"  title="Go to top" >Top</button>
+      
+      
+      
+      <script>
+      //Get the button
+      var mybutton = document.getElementById("myBtn");
+      
+      // When the user scrolls down 20px from the top of the document, show the button
+      window.onscroll = function() {scrollFunction()};
+      
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          mybutton.style.display = "block";
+        } else {
+          mybutton.style.display = "none";
+        }
+      }
+      
+      // When the user clicks on the button, scroll to the top of the document
+      function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+      }
+      </script>
+      <style>
+        .footer {
+           position: fixed;
+           left: 0;
+           bottom: 0;
+           width: 100%;
+           background-color: rgb(243, 243, 243);
+           color: rgb(10, 10, 10);
+           text-align: center;
+           font-size: small;
+        }
+        </style>
+      <div class="footer">
+  <p>© Born Artholic All Rights Reserved| Terms and Condition </p>
+</div>
+    
+  </body>
+</html>
